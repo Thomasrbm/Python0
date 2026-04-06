@@ -5,10 +5,11 @@ import datetime
 
 # https://www.programiz.com/python-programming/datetime/strftime
 
+# https://docs.python.org/3/library/string.html#format-specification-mini-language
 
 print("Seconds since January 1, 1970: ", end = "")
 sec = time.time()
-print(sec, end = "")
+print(f"{sec:,.3f}", end = "")
 print(" or", end = "")
 print("  ...   ", end = "")
 print(" in scientific notation")
