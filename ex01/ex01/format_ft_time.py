@@ -12,7 +12,7 @@ import decimal
 
 print("Seconds since January 1, 1970: ", end = "")
 sec = time.time()
-print(f"{sec:,.3f}", end = "")
+print(f"{sec:,.4f}", end = "")
 print(" or ", end = "")
 print((f"{sec:.2e}"), end = "")
 print(" in scientific notation")
