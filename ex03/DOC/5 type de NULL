@@ -1,0 +1,11 @@
+
+
+
+# il y a 5 type de null
+
+# None = Null en C : pointe vers l adres 0x00 definit pour "rien"
+# en python c est un objet dans la heap qui rpz ca mais pareil dans le principe.
+
+
+
+#  0, " ", false,  [],  

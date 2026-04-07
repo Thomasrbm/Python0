@@ -1,0 +1,112 @@
+
+============ Prototype de fonction ============
+
+
+
+def nom_fonction(parametre: type) -> type_retour:
+    # corps
+    return valeur
+
+
+
+
+
+
+
+
+============ if __name__ == "__main__": ============
+
+
+__name__ = variable automatique.
+
+par defaut a l execution d un fichier il est mit a main donc ca execute.
+
+if __name__ == "__main__":
+    function()
+
+
+
+
+
+================ Fonctions de bases ======================
+
+len([1, 2, 3])      # 3
+range(5)            # 0 1 2 3 4
+print()             # stdout
+input()             # stdin
+int("42")           # cast str → int
+str(42)             # cast int → str
+isinstance(x, int)  # check type
+
+
+
+================ Fonctions de bases ======================
+
+
+
+a, b, c = [1, 2, 3]
+first, *rest = [1, 2, 3, 4]  # first=1, rest=[2,3,4]
+
+
+
+
+============= imports =========================
+
+
+
+import math                     # module entier
+from math import sqrt           # fonction précise
+from math import sqrt as racine # alias
+
+
+
+
+
+============= try catch  =========================
+
+
+
+try:
+    x = int("abc")
+except ValueError as e:
+    print(f"erreur : {e}")
+finally:
+    print("toujours executé")
+
+
+
+
+=================== Boucles ============================
+
+
+
+plus de ++ NI de --
+
+
+
+# while
+while x > 0:
+    x -= 1
+
+# for sur un range
+for i in range(10):       # 0 à 9
+    print(i)
+
+for i in range(0, 10, 2): # 0 2 4 6 8 (step)
+    print(i)
+
+
+
+
+=============== Operators ===========================
+
+
+
+
+i += 1   # increment
+i -= 1   # decrement
+i *= 2
+i /= 2
+i //= 2  # division entière
+i %= 2
+i **= 2  # puissance
