@@ -1,6 +1,3 @@
-import sys
-
-
 def ft_tqdm(lst: range) -> None:
     """Replicate tqdm progress bar using yield."""
     total = len(lst)
