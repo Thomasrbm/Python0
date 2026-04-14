@@ -1,0 +1,11 @@
+def countdown(n):
+    while n >= 0:
+        yield n
+        n -= 1
+
+for val in countdown(5):
+    print(val)
+
+
+# yield permet de return sans finish un programme + reprendre au prochaine
+# appel la ou ca s est arreter
