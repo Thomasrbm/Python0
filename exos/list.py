@@ -332,19 +332,82 @@ registry   = {"pid": 1337, "name": "kash",    # dict
 # => tags
 
 other_tags = {"rust", "linux", "nix"}
+print(other_tags)
 
 # 17. Ajoute "vulkan" au set
+
+other_tags.add("vulkan")
+print(other_tags)
+
 # 18. Discard "asm" (sans erreur si absent)
+
+if "asm" in other_tags:
+    other_tags.discard("asm")
+else :
+    print("asm is not in set")
+
 # 19. Remove "c" (lève KeyError si absent — c'est voulu, wrappe en try/except)
+
+try :
+    other_tags.remove("c")
+except KeyError as e :
+    print(f"error : {e} is not in set")
+
 # 20. Pop un élément aléatoire, stocke dans `popped_tag`
+
+popped_tag = other_tags.pop()
+print(f"random popped = {popped_tag}")
+
 # 21. Copie tags dans `tags_backup`
+
+tags_backup = other_tags.copy()
+print(f"tag_backup = {tags_backup}")
+
 # 22. Union de tags et other_tags dans `all_tags`
+
+all_tags = tags.union(other_tags)
+print(all_tags)
+
 # 23. Intersection dans `common_tags`
+
+print(tags)
+print(other_tags)
+common_tags = other_tags.intersection(tags)
+print(f"intersection = {common_tags}")
+
 # 24. Différence tags - other_tags dans `only_tags`
+
+print()
+
+only_tags = tags - other_tags
+print(f"unic tags = {only_tags}")
+
+
+
+# .issubset()
+# .issuperset() .update() .clear()
+
 # 25. Vérifie si {"linux"} est subset de all_tags
+
+
+if all_tags.issubset({"linux"}) :
+    print("yes")
+
 # 26. Vérifie si all_tags est superset de {"nix"}
+
+
+
 # 27. Update tags avec {"opengl", "glsl"}
+
+
+other_tags.update({"opengl", "glsl"})
+print(other_tags)
+
 # 28. Clear tags_backup
+
+
+
+
 
 # ============================================================
 # DICT — méthodes à utiliser :
