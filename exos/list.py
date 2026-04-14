@@ -329,81 +329,86 @@ registry   = {"pid": 1337, "name": "kash",    # dict
 # .issuperset() .update() .clear()
 # ============================================================
 
-# => tags
+# # => tags
 
-other_tags = {"rust", "linux", "nix"}
-print(other_tags)
+# other_tags = {"rust", "linux", "nix"}
+# print(other_tags)
 
-# 17. Ajoute "vulkan" au set
+# # 17. Ajoute "vulkan" au set
 
-other_tags.add("vulkan")
-print(other_tags)
+# other_tags.add("vulkan")
+# print(other_tags)
 
-# 18. Discard "asm" (sans erreur si absent)
+# # 18. Discard "asm" (sans erreur si absent)
 
-if "asm" in other_tags:
-    other_tags.discard("asm")
-else :
-    print("asm is not in set")
+# if "asm" in other_tags:
+#     other_tags.discard("asm")
+# else :
+#     print("asm is not in set")
 
-# 19. Remove "c" (lève KeyError si absent — c'est voulu, wrappe en try/except)
+# # 19. Remove "c" (lève KeyError si absent — c'est voulu, wrappe en try/except)
 
-try :
-    other_tags.remove("c")
-except KeyError as e :
-    print(f"error : {e} is not in set")
+# try :
+#     other_tags.remove("c")
+# except KeyError as e :
+#     print(f"error : {e} is not in set")
 
-# 20. Pop un élément aléatoire, stocke dans `popped_tag`
+# # 20. Pop un élément aléatoire, stocke dans `popped_tag`
 
-popped_tag = other_tags.pop()
-print(f"random popped = {popped_tag}")
+# popped_tag = other_tags.pop()
+# print(f"random popped = {popped_tag}")
 
-# 21. Copie tags dans `tags_backup`
+# # 21. Copie tags dans `tags_backup`
 
-tags_backup = other_tags.copy()
-print(f"tag_backup = {tags_backup}")
+# tags_backup = other_tags.copy()
+# print(f"tag_backup = {tags_backup}")
 
-# 22. Union de tags et other_tags dans `all_tags`
+# # 22. Union de tags et other_tags dans `all_tags`
 
-all_tags = tags.union(other_tags)
-print(all_tags)
+# all_tags = tags.union(other_tags)
+# print(all_tags)
 
-# 23. Intersection dans `common_tags`
+# # 23. Intersection dans `common_tags`
 
-print(tags)
-print(other_tags)
-common_tags = other_tags.intersection(tags)
-print(f"intersection = {common_tags}")
+# print(tags)
+# print(other_tags)
+# common_tags = other_tags.intersection(tags)
+# print(f"intersection = {common_tags}")
 
-# 24. Différence tags - other_tags dans `only_tags`
+# # 24. Différence tags - other_tags dans `only_tags`
 
-print()
+# print()
 
-only_tags = tags - other_tags
-print(f"unic tags = {only_tags}")
-
-
-
-# .issubset()
-# .issuperset() .update() .clear()
-
-# 25. Vérifie si {"linux"} est subset de all_tags
-
-
-if all_tags.issubset({"linux"}) :
-    print("yes")
-
-# 26. Vérifie si all_tags est superset de {"nix"}
+# only_tags = tags - other_tags
+# print(f"unic tags = {only_tags}")
 
 
 
-# 27. Update tags avec {"opengl", "glsl"}
+# # .issubset()
+# # .issuperset() .update() .clear()
+
+# # 25. Vérifie si {"linux"} est subset de all_tags
+
+# print()
+# print()
+# print(all_tags)
+# print(({"linux"}).issubset(all_tags))
+# print()
 
 
-other_tags.update({"opengl", "glsl"})
-print(other_tags)
+# # 26. Vérifie si all_tags est superset de {"nix"}
 
-# 28. Clear tags_backup
+
+# print({"nix"}.issuperset(all_tags))
+
+
+# # 27. Update tags avec {"opengl", "glsl"}
+
+
+# other_tags.update({"opengl", "glsl"})
+# print(other_tags)
+
+# # 28. Clear tags_backup
 
 
 
@@ -419,15 +424,60 @@ print(other_tags)
 
 # => registry 
 
+# 29. Get "cpu" avec valeur par défaut 0.0  
+print(registry.get("cpu", 0.0))
 
-# 29. Get "cpu" avec valeur par défaut 0.0
+
+
 # 30. Affiche toutes les keys
+
+print()
+for i in registry:
+    print(i)
+
+print()
+
+
 # 31. Affiche toutes les values
+
+for i in registry:
+    print(registry[i])
+
+print()
+
+
 # 32. Itère sur .items() et affiche "key → value"
+
+c = registry.items()
+print(c)
+
+print()
+
 # 33. Update registry avec {"cpu": 1.2, "mem": 512}
+
+print(registry)
+
+registry.update({"cpu" : 1.2})
+registry.update({"mem" : 512})
+
+print(registry)
+print()
+
+
 # 34. Pop "status", stocke dans `old_status`
+
+old_status = registry.pop("status")
+print(old_status)
+
 # 35. Popitem() — récupère et affiche le dernier item inséré
-# 36. Setdefault "priority" à 5 (ne doit pas écraser si existant)
-# 37. Copie registry dans `reg_backup`
+
+pop = registry.popitem()
+print(pop)
+
+
+
 # 38. Crée un dict depuis une liste de clés avec fromkeys(["a","b","c"], 0)
-# 39. Clear reg_backup
+
+
+new_dict = dict.fromkeys(["a","b","c"], 0)
+print(new_dict)
