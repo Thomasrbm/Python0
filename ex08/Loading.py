@@ -9,8 +9,5 @@ def ft_tqdm(lst: range) -> None:
         filled = int(bar_width * (i + 1) / total)
         bar = "=" * filled + ">" if filled < bar_width else "=" * bar_width
         percent = int(100 * (i + 1) / total)
-        sys.stdout.write(
-            f"\r{percent}%|[{bar:<{bar_width}}]| {i+1}/{total}"
-        )
-        sys.stdout.flush()
+        print(f"\r{percent}%|[{bar:<{bar_width}}]| {i+1}/{total}", end="", flush=True)
         yield elem
